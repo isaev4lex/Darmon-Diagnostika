@@ -1,0 +1,82 @@
+.page
+  &-intro
+    background: url(../../img/intro/contacts-bg.jpg) no-repeat
+    background-size: cover
+    background-position: center center
+  &-container
+    display: flex
+    flex-direction: column
+    justify-content: space-evenly
+    width: 100%
+    max-width: 1170px
+    margin: 0 auto
+    height: 411px
+    color: #FFF
+  &-title
+    font-weight: 700
+    margin-bottom: 10px
+  &-btn
+    a
+      display: inline-block
+      color: #FFF
+      font-weight: 700
+      padding: 15px 70px
+      border: 1px solid #FFF
+  &-grid
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 20px
+  &-card
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border: 2px solid #16A3DF
+    width: 200px
+    height: 200px
+    transition: all .3s ease-in-out
+    cursor: pointer
+    &-title
+      font-weight: 700
+      margin-top: 20px
+      color: #16A3DF
+    &:hover
+      background-color: #DAFEFE
+      border-color: #DAFEFE
+      transform: translateY(-10px)
+  &-inner
+    display: flex
+    justify-content: space-between
+  &-number
+    width: 100%
+    max-width: 150px
+    &-title
+      color: #15A2DE
+      font-weight: 700
+      font-size: 24px
+      margin-bottom: 25px
+    a
+      color: #15A2DE
+      line-height: 1.5
+  &-email
+    width: 100%
+    max-width: 200px
+    &-title
+      color: #15A2DE
+      font-weight: 700
+      font-size: 24px
+      margin-bottom: 25px
+    a
+      color: #15A2DE
+  &-address
+    width: 100%
+    max-width: 260px
+    &-title
+      color: #15A2DE
+      font-weight: 700
+      font-size: 24px
+      margin-bottom: 25px
+    p
+      color: #15A2DE
+      line-height: 1.5

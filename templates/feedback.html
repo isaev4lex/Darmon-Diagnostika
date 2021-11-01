@@ -1,0 +1,23 @@
+{% if lang == 'ru' %}
+  <div class="callback">
+    <div class="container-xsm">
+      <form class="callback-form" method="GET"> {% csrf_token %}
+        <input name="name" type="text" placeholder="Имя" />
+        <input name="surname" type="text" placeholder="Фамилия" />
+        <input name="phone" type="tel" placeholder="Номер телефона" />
+        <button>Оставить заявку</button>
+      </form>
+    </div>
+  </div>
+{% elif lang == 'uz' %}
+  <div class="callback">
+    <div class="container-xsm">
+      <form class="callback-form" method="GET"> {% csrf_token %}
+        <input name="name" type="text" placeholder="Ism" />
+        <input name="surname" type="text" placeholder="Familiya" />
+        <input name="phone" type="tel" placeholder="Telefon raqami" />
+        <button>Murojaat qilish</button>
+      </form>
+    </div>
+  </div>
+{% endif %}

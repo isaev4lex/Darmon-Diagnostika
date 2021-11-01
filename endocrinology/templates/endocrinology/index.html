@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Эндокринология</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+      <div class="endoc-intro">
+        <div class="intro-overlay">
+          {% include 'header_ru.html' %}
+          <div class="laboratory-container">
+            <div class="laboratory-title">Эндокринология</div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="others">
+          <div class="container-lg">
+            <div class="others-inner">
+              <div class="others-txt">
+                <div class="others-title">
+                  Диагностический центр Darmon Diagnostika может предложить следующие виды кардиологических исследований:
+
+Диагностический центр Darmon Diagnostika может предложить следующие виды дерматологических исследований:
+                </div>
+                <div class="others-list">
+                  {% for endocrinology_item in endocrinology_items %}
+                    <div class="others-item">
+                      <a href="{{ endocrinology_item.get_url_ru }}" class="others-link">{{ forloop.counter }}. {{ endocrinology_item.title_ru }}</a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="others-img">
+                <img src="{% static '/img/endo.webp' %}" alt="Картинка" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% include 'feedback.html' %}
+      </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+      <div class="endoc-intro">
+        <div class="intro-overlay">
+          {% include 'header_uz.html' %}
+          <div class="laboratory-container">
+            <div class="laboratory-title">Endokrinologiya</div>
+            <div class="intro-btn">
+              <a href="#"> Qo'ng'iroq qilish </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="others">
+          <div class="container-lg">
+            <div class="others-inner">
+              <div class="others-txt">
+                <div class="others-title">
+                  Darmon Diagnostika markazi quyidagi turdagi endokrinologik tekshiruvlarini taklif qilishi mumkin:
+                </div>
+                <div class="others-list">
+                  {% for endocrinology_item in endocrinology_items %}
+                    <div class="others-item">
+                      <a href="{{ endocrinology_item.get_url_uz }}" class="others-link">{{ forloop.counter }}. {{ endocrinology_item.title_uz }}</a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="others-img">
+                <img src="{% static '/img/endo.webp' %}" alt="Картинка" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% include 'feedback.html' %}
+      </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+  {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Терапевт</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+    <div class="terapevt-intro">
+      <div class="intro-overlay">
+        {% include 'header_ru.html' %}
+      <div class="service-container">
+          <div class="service-title">
+              {% for therapist_item in therapist_items %}
+                {% if therapist_item.slug == slug %}
+                  {{ therapist_item.title_ru }}
+                {% endif %}
+              {% endfor %}
+          </div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="service">
+        <div class="container-lg">
+          <div class="service-inner">
+            <div class="service-name">
+              {% for therapist_item in therapist_items %}
+                {% if therapist_item.slug == slug %}
+                  {{ therapist_item.title_ru }}
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="service-desc">
+              <p>
+                {% for therapist_item in therapist_items %}
+                  {% autoescape off %}
+                    {% if therapist_item.slug == slug %}
+                      {{ therapist_item.description_ru }}
+                    {% endif %}
+                  {% endautoescape %}
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include 'feedback.html' %}
+    </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+    <div class="terapevt-intro">
+      <div class="intro-overlay">
+        {% include 'header_uz.html' %}
+        <div class="service-container">
+            <div class="service-title">
+              {% for therapist_item in therapist_items %}
+                {% if therapist_item.slug == slug %}
+                  {{ therapist_item.title_uz }}
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="service">
+        <div class="container-lg">
+          <div class="service-inner">
+            <div class="service-name">
+              {% for therapist_item in therapist_items %}
+                {% if therapist_item.slug == slug %}
+                  {{ therapist_item.title_uz }}
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="service-desc">
+              <p>
+                {% for therapist_item in therapist_items %}
+                  {% autoescape off %}
+                    {% if therapist_item.slug == slug %}
+                      {{ therapist_item.description_uz }}
+                    {% endif %}
+                  {% endautoescape %}
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include 'feedback.html' %}
+    </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

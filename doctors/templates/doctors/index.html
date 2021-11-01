@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Специалисты</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+    <div class="team-intro">
+      <div class="intro-overlay">
+        {% include 'header_ru.html' %}
+        <div class="team-container">
+          <div class="team-title">Специалисты</div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="team">
+        <div class="container-lg">
+          <div class="team-inner">
+            {% for doctor in doctors %}
+              <a href="{{ doctor.get_url_ru }}">
+                <div class="team-card">
+                  <div class="team-avatar">
+                    <img src="{{ doctor.photo.url }} " alt="Специалист" />
+                  </div>
+                  <div class="team-name">{{ doctor.name_ru }}</div>
+                  <div class="team-profession">{{ doctor.specialty_ru }}</div>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+    <div class="team-intro">
+      <div class="intro-overlay">
+        {% include 'header_uz.html' %}
+        <div class="team-container">
+          <div class="team-title">Mutaxassislar</div>
+            <div class="intro-btn">
+              <a href="#"> Qo'ng'iroq qilish </a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="team">
+        <div class="container-lg">
+          <div class="team-inner">
+            {% for doctor in doctors %}
+              <a href="{{ doctor.get_url_uz }}">
+                <div class="team-card">
+                  <div class="team-avatar">
+                    <img src="{{ doctor.photo.url }} " alt="Специалист" />
+                  </div>
+                  <div class="team-name">{{ doctor.name_uz }}</div>
+                  <div class="team-profession">{{ doctor.specialty_uz }}</div>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+    {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

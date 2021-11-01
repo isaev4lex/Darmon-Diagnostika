@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Специалист</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+    <div class="person-intro">
+      <div class="intro-overlay">
+        {% include 'header_ru.html' %}
+        <div class="person-container">
+          <div class="person-title">Специалисты</div>
+          <div class="intro-btn">
+            <a href="#"> Позвонить </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="person">
+        <div class="container-lg">
+          <div class="person-inner">
+            {% for doctor in doctors %}
+              {% if slug == doctor.slug %}
+                <div class="person-content">
+                  <div class="person-content-title">
+                    {{ doctor.name_ru }}
+                  </div>
+                  <div class="person-content-profession">{{ doctor.specialty_ru }}</div>
+                  <div class="person-content-info">
+                    <div class="person-content-avatar">
+                      <img src="{{ doctor.photo.url }}" alt="Специалист" />
+                    </div>
+                    <div class="person-content-time">
+                      <div class="person-content-period">Время приема:</div>
+                      <p>
+                        <span class="day">{{ doctor.work_days_ru }}</span>, с
+                        <span class="from">{{ doctor.work_from }}</span> до
+                        <span class="to">{{ doctor.work_to }}</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="person-content-subtitle">
+                    Образование и опыт работы:
+                  </div>
+                  <div class="person-content-text">
+                    <p>
+                      {% autoescape off %}
+                        {{ doctor.description_ru }}
+                      {% endautoescape %}
+                    </p>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+
+            <div class="person-sidebar">
+              {% for random_doctor in random_doctors %}
+                <a href="{{ random_doctor.get_url_ru }}">
+                  <div class="person-sidebar-card">
+                    <div class="person-sidebar-avatar">
+                      <img src="{{ random_doctor.photo.url }}" alt="Специалист" />
+                    </div>
+                    <div class="person-sidebar-name">
+                      {{ random_doctor.name_ru }}
+                    </div>
+                    <div class="person-sidebar-profession">{{ random_doctor.specialty_ru }}</div>
+                  </div>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+    <div class="person-intro">
+      <div class="intro-overlay">
+        {% include 'header_uz.html' %}
+        <div class="person-container">
+          <div class="person-title">Mutaxassislar</div>
+          <div class="intro-btn">
+            <a href="#"> Qo'ng'iroq qilish </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="person">
+        <div class="container-lg">
+          <div class="person-inner">
+            {% for doctor in doctors %}
+              {% if slug == doctor.slug %}
+                <div class="person-content">
+                  <div class="person-content-title">
+                    {{ doctor.name_uz }}
+                  </div>
+                  <div class="person-content-profession">{{ doctor.specialty_uz }}</div>
+                  <div class="person-content-info">
+                    <div class="person-content-avatar">
+                      <img src="{{ doctor.photo.url }}" alt="Специалист" />
+                    </div>
+                    <div class="person-content-time">
+                      <div class="person-content-period">Qabul qilish vaqti:</div>
+                      <p>
+                        <span class="day">{{ doctor.work_days_uz }}</span>, с
+                        <span class="from">{{ doctor.work_from }}</span> до
+                        <span class="to">{{ doctor.work_to }}</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="person-content-subtitle">
+                    Ta'lim va ish tajribasi:
+                  </div>
+                  <div class="person-content-text">
+                    <p>
+                      {% autoescape off %}
+                        {{ doctor.description_uz }}
+                      {% endautoescape %}
+                    </p>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+
+
+            <div class="person-sidebar">
+              {% for random_doctor in random_doctors %}
+                <a href="{{ random_doctor.get_url_uz }}">
+                  <div class="person-sidebar-card">
+                    <div class="person-sidebar-avatar">
+                      <img src="{{ random_doctor.photo.url }}" alt="Специалист" />
+                    </div>
+                    <div class="person-sidebar-name">
+                      {{ random_doctor.name_uz }}
+                    </div>
+                    <div class="person-sidebar-profession">{{ random_doctor.specialty_uz }}</div>
+                  </div>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+    {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

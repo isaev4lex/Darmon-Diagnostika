@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Эндокринология</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+    <div class="endoc-intro">
+      <div class="intro-overlay">
+        {% include 'header_ru.html' %}
+      <div class="service-container">
+          <div class="service-title">
+              {% for endocrinology_item in endocrinology_items %}
+                {% if endocrinology_item.slug == slug %}
+                  {{ endocrinology_item.title_ru }}
+                {% endif %}
+              {% endfor %}
+          </div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="service">
+        <div class="container-lg">
+          <div class="service-inner">
+            <div class="service-name">
+              {% for endocrinology_item in endocrinology_items %}
+                {% if endocrinology_item.slug == slug %}
+                  {{ endocrinology_item.title_ru }}
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="service-desc">
+              <p>
+                {% for endocrinology_item in endocrinology_items %}
+                  {% autoescape off %}
+                    {% if endocrinology_item.slug == slug %}
+                      {{ endocrinology_item.description_ru }}
+                    {% endif %}
+                  {% endautoescape %}
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include 'feedback.html' %}
+    </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+    <div class="endoc-intro">
+      <div class="intro-overlay">
+        {% include 'header_uz.html' %}
+        <div class="service-container">
+            <div class="service-title">
+              {% for endocrinology_item in endocrinology_items %}
+                {% if endocrinology_item.slug == slug %}
+                  {{ endocrinology_item.title_uz }}
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="service">
+        <div class="container-lg">
+          <div class="service-inner">
+            <div class="service-name">
+              {% for endocrinology_item in endocrinology_items %}
+                {% if endocrinology_item.slug == slug %}
+                  {{ endocrinology_item.title_uz }}
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="service-desc">
+              <p>
+                {% for endocrinology_item in endocrinology_items %}
+                  {% autoescape off %}
+                    {% if endocrinology_item.slug == slug %}
+                      {{ endocrinology_item.description_uz }}
+                    {% endif %}
+                  {% endautoescape %}
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include 'feedback.html' %}
+    </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+  {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

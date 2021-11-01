@@ -1,0 +1,558 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Направления</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+    <div class="routs-intro">
+       <div class="intro-overlay">
+        {% include 'header_ru.html' %}
+          <div class="routs-container">
+            <div class="routs-title">Направления</div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="routs">
+          <div class="container-md">
+            <div class="routs-grid">
+              <a href="{% url 'laboratory_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/labaratory.svg' %}"
+                    alt="Лаборатория"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Лаборатория</div>
+                </div>
+              </a>
+              <a href="{% url 'uzi_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/uzi.svg' %}"
+                    alt="УЗИ"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">УЗИ</div>
+                </div>
+              </a>
+              <a href="{% url 'xray_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/xray.svg' %}"
+                    alt="Рентген - кабинет"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Рентген - кабинет</div>
+                </div>
+              </a>
+              <a href="{% url 'gynecology_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/ginecology.svg' %}"
+                    alt="Гинекология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Гинекология</div>
+                </div>
+              </a>
+              <a href="{% url 'cardiology_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/cardio.svg' %}"
+                    alt="Кардиология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Кардиология</div>
+                </div>
+              </a>
+              <a href="{% url 'urology_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/urology.svg' %}"
+                    alt="Урология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Урология</div>
+                </div>
+              </a>
+              <a href="{% url 'endocrinology_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/endocrinology.svg' %}"
+                    alt="Эндокринология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Эндокринология</div>
+                </div>
+              </a>
+              <a href="{% url 'proctology_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/proctology.svg' %}"
+                    alt="Проктология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Проктология</div>
+                </div>
+              </a>
+              <a href="{% url 'lore_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/lor.svg' %}"
+                    alt="ЛОР"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">ЛОР</div>
+                </div>
+              </a>
+              <a href="{% url 'pediatrics_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/pediatory.svg' %}"
+                    alt="Педиатрия"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Педиатрия</div>
+                </div>
+              </a>
+              <a href="{% url 'neuropathologist_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/neurology.svg' %}"
+                    alt="Невропотолог"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Невропотолог</div>
+                </div>
+              </a>
+              <a href="{% url 'therapist_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/terapevt.svg' %}"
+                    alt="Терапевт"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Терапевт</div>
+                </div>
+              </a>
+              <a href="{% url 'surgery_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/surgery.svg' %}"
+                    alt="Хирургия"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Хирургия<br> (Операционный блок)</div>
+                </div>
+              </a>
+              <a href="{% url 'hospital_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/stationery.svg' %}"
+                    alt="Стационар"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Стационар</div>
+                </div>
+              </a>
+              <a href="{% url 'gastroenterologist_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/gastroenterology.svg' %}"
+                    alt="Гастроэнтеролог"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Гастроэнтеролог</div>
+                </div>
+              </a>
+              <a href="{% url 'physical_therapy_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/fizioterapiya.svg' %}"
+                    alt="Физиотерапия"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Физиотерапия</div>
+                </div>
+              </a>
+              <a href="{% url 'neuropathologist_kids_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/detskiyi-nevropotolog.svg' %}"
+                    alt="Детский невропотолог"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Детский невропотолог</div>
+                </div>
+              </a>
+              <!-- <a href="{% url 'dermatology_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/dermotology.svg' %}"
+                    alt="Дерматология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Дерматология</div>
+                </div>
+              </a> -->
+              <!-- <a href="{% url 'stomatology_ru' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/stomotology.svg' %}"
+                    alt="Стоматология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Стоматология</div>
+                </div>
+              </a> -->
+             <!--  <a href="{% url 'operating_unit_ru' %}">
+               <div class="routs-card">
+                 <img
+                   src="{% static '/img/diagnostic-icons/surgery-block.svg' %}"
+                   alt="Операционный блок"
+                   class="routs-card-icon"
+                 />
+                 <div class="routs-card-title">Операционный блок</div>
+               </div>
+             </a> -->
+            </div>
+          </div>
+        </div>
+
+          <div class="services">
+            <div class="container-md">
+              <div class="services-title">Наши услуги</div>
+              <div class="services-inner">
+                <div class="services-item">
+                <div class="services-name">
+                  Общий анализ крови ( 26 показателей )
+                </div>
+                <div class="services-price">25 000 сум</div>
+              </div>
+              <div class="services-item">
+                <div class="services-name">
+                  Скорость оседания эритроцитов (СОЭ)
+                </div>
+                <div class="services-price">25 000 сум</div>
+              </div>
+              <div class="services-item">
+                <div class="services-name">
+                  Группа крови и резус-фактор (Rh)
+                </div>
+                <div class="services-price">25 000 сум</div>
+              </div>
+              <div class="services-item">
+                <div class="services-name">
+                  ВСК (время свертывания по Сухареву)
+                </div>
+                <div class="services-price">7 000 сум</div>
+              </div>
+              <div class="services-item">
+                <div class="services-name">Гемоглобин</div>
+                <div class="services-price">10 000 сум</div>
+              </div>
+            </div>
+            <div class="services-btn">
+              <a href="{% url 'price_ru' %}"
+                >Посмотреть всё
+                <img src="{% static '/img/right-arrow-white.svg' %}" alt="Стрелка"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </main>
+      {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+    <div class="routs-intro">
+       <div class="intro-overlay">
+        {% include 'header_uz.html' %}
+          <div class="routs-container">
+            <div class="routs-title">Yo'nalishlar</div>
+            <div class="intro-btn">
+              <a href="#"> Qo'ng'iroq qilish </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="routs">
+          <div class="container-md">
+            <div class="routs-grid">
+              <a href="{% url 'laboratory_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/labaratory.svg' %}"
+                    alt="Лаборатория"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Laboratoriya</div>
+                </div>
+              </a>
+              <a href="{% url 'uzi_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/uzi.svg' %}"
+                    alt="УЗИ"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Ultratovush tekshiruv</div>
+                </div>
+              </a>
+              <a href="{% url 'xray_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/xray.svg' %}"
+                    alt="Рентген - кабинет"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Rentgen</div>
+                </div>
+              </a>
+              <a href="{% url 'gynecology_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/ginecology.svg' %}"
+                    alt="Гинекология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Ginekologiya</div>
+                </div>
+              </a>
+              <a href="{% url 'cardiology_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/cardio.svg' %}"
+                    alt="Кардиология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Kardiologiya</div>
+                </div>
+              </a>
+              <a href="{% url 'urology_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/urology.svg' %}"
+                    alt="Урология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Urologiya</div>
+                </div>
+              </a>
+              <a href="{% url 'endocrinology_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/endocrinology.svg' %}"
+                    alt="Эндокринология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Endokrinologiya</div>
+                </div>
+              </a>
+              <a href="{% url 'proctology_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/proctology.svg' %}"
+                    alt="Проктология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Proktologiya</div>
+                </div>
+              </a>
+              <a href="{% url 'dermatology_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/dermotology.svg' %}"
+                    alt="Дерматология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Dermatologiya</div>
+                </div>
+              </a>
+              <a href="{% url 'stomatology_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/stomotology.svg' %}"
+                    alt="Стоматология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Stomatologiya</div>
+                </div>
+              </a>
+              <a href="{% url 'lore_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/lor.svg' %}"
+                    alt="ЛОР"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">KBB</div>
+                </div>
+              </a>
+              <a href="{% url 'pediatrics_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/pediatory.svg' %}"
+                    alt="Педиатрия"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Pediatriya</div>
+                </div>
+              </a>
+              <a href="{% url 'neuropathologist_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/neurology.svg' %}"
+                    alt="Невропотолог"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Nevropatolog</div>
+                </div>
+              </a>
+              <a href="{% url 'therapist_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/terapevt.svg' %}"
+                    alt="Терапевт"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Terapevt</div>
+                </div>
+              </a>
+              <a href="{% url 'surgery_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/surgery.svg' %}"
+                    alt="Хирургия"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Jarrohlik<br> (Operatisya bo'limi)</div>
+                </div>
+              </a>
+              <a href="{% url 'hospital_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/stationery.svg' %}"
+                    alt="Стационар"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Davolash statsionari</div>
+                </div>
+              </a>
+              <a href="{% url 'gastroenterologist_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/gastroenterology.svg' %}"
+                    alt="Гастроэнтеролог"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Gastroenterolog</div>
+                </div>
+              </a>
+              <a href="{% url 'physical_therapy_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/fizioterapiya.svg' %}"
+                    alt="Физиотерапия"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Fizioterapiya</div>
+                </div>
+              </a>
+              <a href="{% url 'neuropathologist_kids_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/detskiyi-nevropotolog.svg' %}"
+                    alt="Детский невропотолог"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Bolalar nevropatologi</div>
+                </div>
+              </a>
+              <!-- <a href="{% url 'dermatology_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/dermotology.svg' %}"
+                    alt="Дерматология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Dermatologiya</div>
+                </div>
+              </a> -->
+              <!-- <a href="{% url 'stomatology_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/stomotology.svg' %}"
+                    alt="Стоматология"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Stomatologiya</div>
+                </div>
+              </a> -->
+              <!-- <a href="{% url 'operating_unit_uz' %}">
+                <div class="routs-card">
+                  <img
+                    src="{% static '/img/diagnostic-icons/surgery-block.svg' %}"
+                    alt="Операционный блок"
+                    class="routs-card-icon"
+                  />
+                  <div class="routs-card-title">Operatsiya bo'limi</div>
+                </div>
+              </a> -->
+            </div>
+          </div>
+        </div>
+
+          <div class="services">
+        <div class="container-md">
+          <div class="services-title">Bizning xizmatimiz</div>
+          <div class="services-inner">
+            <div class="services-item">
+              <div class="services-name">
+                qon analizi
+              </div>
+              <div class="services-price">25 000 som</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">
+                eritrotsitlarning singish tezligi
+              </div>
+              <div class="services-price">25 000 som</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">
+                qon guruhi va rezus-faktor
+              </div>
+              <div class="services-price">25 000 som</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">
+                qon ivishi
+              </div>
+              <div class="services-price">7 000 som</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">gemoglobin</div>
+              <div class="services-price">10 000 som</div>
+            </div>
+          </div>
+          <div class="services-btn">
+            <a href="{% url 'price_uz' %}">Hamma narsaga qarang
+              <img src="{% static '/img/right-arrow-white.svg' %}" alt="Стрелка"
+              /></a>
+          </div>
+        </div>
+      </div>
+      </main>
+      {% include 'footer_uz.html' %}
+  {% endif %}
+  {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

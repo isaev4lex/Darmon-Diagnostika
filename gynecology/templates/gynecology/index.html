@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Гинекология</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+      <div class="gynecology-intro">
+        <div class="intro-overlay">
+          {% include 'header_ru.html' %}
+          <div class="laboratory-container">
+            <div class="laboratory-title">Гинекология</div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="others">
+          <div class="container-lg">
+            <div class="others-inner">
+              <div class="others-txt">
+                <div class="others-title">
+                  Диагностический центр Darmon Diagnostika может предложить
+                  следующие виды гинекологических исследований:
+                </div>
+                <div class="others-list">
+                  {% for gynecology_item in gynecology_items %}
+                    <div class="others-item">
+                      <a href="{{ gynecology_item.get_url_ru }}" class="others-link">{{ forloop.counter }}. {{ gynecology_item.title_ru }}</a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="others-img">
+                <img src="{% static '/img/ginecology-card.webp' %}" alt="Картинка" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% include 'feedback.html' %}
+      </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+      <div class="gynecology-intro">
+        <div class="intro-overlay">
+          {% include 'header_uz.html' %}
+          <div class="laboratory-container">
+            <div class="laboratory-title">Ginekologiya</div>
+            <div class="intro-btn">
+              <a href="#"> Qo'ng'iroq qilish </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="others">
+          <div class="container-lg">
+            <div class="others-inner">
+              <div class="others-txt">
+                <div class="others-title">
+                  Darmon Diagnostika markazi quyidagi turdagi ginekologik tekshiruvlarni taklif qilishi mumkin:
+                </div>
+                <div class="others-list">
+                  {% for gynecology_item in gynecology_items %}
+                    <div class="others-item">
+                      <a href="{{ gynecology_item.get_url_uz }}" class="others-link">{{ forloop.counter }}. {{ gynecology_item.title_uz }}</a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="others-img">
+                <img src="{% static '/img/ginecology-card.webp' %}" alt="Картинка" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% include 'feedback.html' %}
+      </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+  {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% load static %}
+<div class="map">
+  <script
+    type="text/javascript"
+    charset="utf-8"
+    async
+    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac9154d34a72660f518506f51743fea2caf80abc664fbb024c132e3899f8ffdb4&amp;width=100%25&amp;height=360&amp;lang=ru_RU&amp;scroll=false"
+  ></script>
+</div>
+<footer class="footer">
+  <div class="container-lg">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="{% static '/img/footer-logo.png' %}" alt="Логотип" />
+        <div class="footer-logo-desc">
+          Toshkent shahridagi Darmon Diagnostika ko'p tarmoqli klinikasi. 10.11.2017 yildagi 8600-00-sonli litsenziya
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-nav-title">Navigatsiya</div>
+        <ul class="footer-nav-list">
+          <li class="footer-nav-item">
+            <a href="{% url 'home_uz' %}"> Bosh sahifa </a>
+          </li>
+          <li class="footer-nav-item">
+            <a href="{% url 'routes_uz' %}"> Yoʻnalishlar </a>
+          </li>
+          <li class="footer-nav-item">
+            <a href="{% url 'price_uz' %}"> Narxlar </a>
+          </li>
+          <li class="footer-nav-item">
+            <a href="{% url 'doctors_uz' %}"> Mutaxassislar </a>
+          </li>
+          <li class="footer-nav-item">
+            <a href="{% url 'contacts_uz' %}"> Aloqa kontaktlari </a>
+          </li>
+          <li class="footer-nav-item">
+            <a href="{% url 'about_us_uz' %}"> Klinikamiz haqida </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-contacts">
+        <div class="footer-contacts-title">Aloqa kontaktlari</div>
+        <div class="footer-contacts-number">
+          <a href="tel:+998712174700">
+            <img src="{% static '/img/footer-icons/phone-blue.svg' %}" alt="Телефон" />
+              {% for phone in phones %}
+                <a href="tel:phone">{{ phone }}</a>
+              {% endfor %}
+            </a>
+
+        </div>
+        <div class="footer-contacts-mail">
+          <img src="{% static '/img/footer-icons/mail.svg' %}" alt="Почтовый ящик" />
+          {% for email in emails %}
+            {{ email }}
+          {% endfor %}
+        </div>
+        <div class="footer-contacts-location">
+          <img src="{% static '/img/footer-icons/location.svg' %}" alt="Локация" />
+          {% for address in addresses %}
+            {{ address.address_uz }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

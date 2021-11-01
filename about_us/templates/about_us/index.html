@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - О Нас</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+    <div class="about-intro">
+      <div class="intro-overlay">
+        {% include 'header_ru.html' %}
+        <div class="about-container">
+          <div class="about-title">О нас</div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <main>
+        <div class="about">
+          <div class="container-lg">
+            <div class="about-inner">
+              <div class="about-p">
+                <div class="about-p-title">О нас</div>
+                <div class="about-p-desc">
+                  <p>
+                    В медицинском центре «DARMON DIAGNOSTIKA» вы можете получить
+                    консультацию врачей. Консультативный прием ведут опытные,
+                    квалифицированные врачи имеющие большой опыт работы.
+                  </p>
+                </div>
+              </div>
+              <div class="about-p">
+                <img
+                  src="{% static '/img/about/1.jpg' %}"
+                  alt="Картинка"
+                  class="about-p-img"
+                />
+              </div>
+              <div class="about-p">
+                <div class="about-p-title">Вызов врача на дом</div>
+                <div class="about-p-desc">
+                  <p>
+                    Если состояние вашего здоровья не позволяет посетить
+                    клинику, вы можете вызвать врача на дом. При необходимости
+                    на дом приедет терапевт, узкий специалист или медицинская
+                    сестра. Возможно также взятие анализов, проведение
+                    диагностики и различных медицинских процедур на дому.
+                  </p>
+                </div>
+              </div>
+              <div class="about-p">
+                <div class="about-p-title">Диагностика</div>
+                <div class="about-p-desc">
+                  <p>
+                    В медицинском центре «DARMON DIAGNOSTIKA» возможно
+                    проведение многих видов инструментальной диагностики.
+                    Кабинеты оснащены самым современным оборудованием, что
+                    позволяет оперативно проводить все необходимые исследования,
+                    выявлять нарушения и патологии, следить за ходом лечения и
+                    предотвращать дальнейшее развитие заболеваний.
+                  </p>
+                  <p>
+                    Современную медицину невозможно представить без анализов.
+                    Лабораторная диагностика даёт до 70% информации о состоянии
+                    здоровья человека. Медицинский центр «DARMON DIAGNOSTIKA»
+                    располагает собственными современными лабораториями, где
+                    осуществляются около 3 000 видов лабораторных анализов и
+                    исследований. В медицинском центре «DARMON DIAGNOSTIKA» к
+                    услугам наших пациентов комфортабельные терапевтический,
+                    хирургический и дневной стационары. В которых проводятся
+                    квалифицированное комплексное лечение (консультации всех
+                    необходимых специалистов, круглосуточное наблюдение и уход),
+                    комплексные диагностические обследования и
+                    лечебно-оздоровительные процедуры.
+                  </p>
+                </div>
+              </div>
+              <div class="about-p">
+                <img
+                  src="{% static '/img/about/2.jpg' %}"
+                  alt="Картинка"
+                  class="about-p-img"
+                />
+              </div>
+              <div class="about-p">
+                <div class="about-p-title">Операционные</div>
+                <div class="about-p-desc">
+                  <p>
+                    В медицинском центре «DARMON DIAGNOSTIKA» проводятся
+                    плановые операции. Операционный блок хирургического
+                    отделения «DARMON DIAGNOSTIKA» оснащен современным
+                    оборудованием, что позволяет проводить высокотехнологичные,
+                    малотравматичные операции.
+                  </p>
+                </div>
+              </div>
+              <div class="about-p">
+                <div class="about-p-title">Медицинские справки</div>
+                <div class="about-p-desc">
+                  <p>
+                    В медицинском центре «DARMON DIAGNOSTIKA» вы можете пройти
+                    комплексное медицинское обследование (приёмы нескольких
+                    специалистов, все необходимые анализы и диагностические
+                    обследования) быстро и по привлекательным ценам. Регулярные
+                    профилактические осмотры у врача — залог здоровья и долгих
+                    лет полноценной жизни.
+                  </p>
+                </div>
+              </div>
+              <div class="about-p">
+                <div class="about-p-title">Лечение</div>
+                <div class="about-p-desc">
+                  <p>
+                    Несомненным «DARMON DIAGNOSTIKA» является широкий спектр
+                    применяемых методов лечения. Врачи «DARMON DIAGNOSTIKA» для
+                    каждого пациента разрабатывают индивидуальную схему лечения,
+                    которая может включать в себя медикаментозную терапию,
+                    физиотерапию, а также комплиментарные методы лечения.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+    <div class="about-intro">
+      <div class="intro-overlay">
+        {% include 'header_uz.html' %}
+        <div class="about-container">
+          <div class="about-title">Klinikamiz haqida</div>
+            <div class="intro-btn">
+              <a href="#"> Qo'ng'iroq qilish </a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <main>
+        <div class="about">
+          <div class="container-lg">
+            <div class="about-inner">
+              <div class="about-p">
+                <div class="about-p-title">Klinikamiz haqida</div>
+                <div class="about-p-desc">
+                  <p>
+                   «Darmon Diagnostika» tibbiy markazida siz katta tajribaga ega shifokorlarlarning konsultatsiyasiga yozilishingiz mumkin
+                  </p>
+                </div>
+              </div>
+              <div class="about-p">
+                <img
+                  src="{% static '/img/about/1.jpg' %}"
+                  alt="Картинка"
+                  class="about-p-img"
+                />
+              </div>
+              <div class="about-p">
+                <div class="about-p-title">Shifokorni uyga chaqirish</div>
+                <div class="about-p-desc">
+                  <p>
+                    Agar sog'lig'ingiz klinikaga tashrif buyurishga imkon bermasa, siz shifokorlarimizni uyingizga chaqirishingiz mumkin. Agar kerak bo'lsa, terapevt, hamshira yoki boshqa shifokor yetib keladi. 
+Shuningdek, uyingizda analiz topshirish, diagnostika va turli tibbiy protseduralarni o'tkazish ham mumkin.
+                  </p>
+                </div>
+              </div>
+              <div class="about-p">
+                <div class="about-p-title">Diagnostika</div>
+                <div class="about-p-desc">
+                  <p>
+                    "DARMON DIAGNOSTIKA" tibbiyot markazida instrumental diagnostikaning ko'p turlarini o'tkazish mumkin. Kabinetlarimiz eng zamonaviy uskunalar bilan jihozlangan, bu esa sizga barcha kerakli analizlarni tezda topshirish, kasalliklar va patologiyalarni aniqlash, davolanish kursini kuzatish va kasalliklarning yanada rivojlanishining oldini olish imkonini beradi.
+                  </p>
+                  <p>
+                    Zamonaviy tibbiyotni tadqiqotsiz tasavvur qilib bo'lmaydi. Laboratoriya diagnostikasi inson salomatligi holati haqida 70% gacha ma’lumot beradi. "DARMON DIAGNOSTIKA" tibbiyot markazida 3000 ga yaqin turdagi laboratoriya analizlari olib boriladigan zamonaviy laboratoriyalar mavjud. 
+"DARMON DIAGNOSTIKA" tibbiy markazida bizning bemorlarimiz uchun qulay terapevtik, jarrohlik va kunduzgi davolanish statsionarlar mavjud. U yerda malakali kompleksli davolash (barcha kerakli mutaxassislarning konsultatsiyalari, bemorlar kuzatuvi), murakkab diagnostik tekshiruvlar va tibbiy-rekreatsion protseduralar o'tkaziladi
+                  </p>
+                </div>
+              </div>
+              <div class="about-p">
+                <img
+                  src="{% static '/img/about/2.jpg' %}"
+                  alt="Картинка"
+                  class="about-p-img"
+                />
+              </div>
+              <div class="about-p">
+                <div class="about-p-title">Operatsiya boʻlimlari</div>
+                <div class="about-p-desc">
+                  <p>
+                    "DARMON DIAGNOSTIKA" tibbiyot markazida rejalashtirilgan operatsiyalar o'tkaziladi. "DARMON DIAGNOSTIKA" jarrohlik bo'limining operatsion bo'limi zamonaviy uskunalar bilan jihozlangan bo'lib, yuqori texnologiyali, travmatik jarohatlarsiz operatsiyalarni oʻtkazishga imkon beradi.
+                  </p>
+                </div>
+              </div>
+              <div class="about-p">
+                <div class="about-p-title">Tibbiy ma'lumotnomalar</div>
+                <div class="about-p-desc">
+                  <p>
+                    "DARMON DIAGNOSTIKA" tibbiy markazida siz tez va qulay narxlarda kompleksli tibbiy ko'rikdan o'tishingiz mumkin (bir nechta mutaxassislarning konsultatsiyalari, barcha kerakli testlar va diagnostik tekshiruvlar). Shifokorning muntazam profilaktik tekshiruvlari - sog'lik va uzoq yillik hayot garovidir.
+                  </p>
+                </div>
+              </div>
+              <div class="about-p">
+                <div class="about-p-title">Davolash</div>
+                <div class="about-p-desc">
+                  <p>
+                    DARMON DIAGNOSTIKA davolashning koʻp usullarini taklif etadi. "DARMON DIAGNOSTIKA" shifokorlari har bir bemor uchun individual davolash sxemasini ishlab chiqadilar, bunga dori terapiyasi, fizioterapiya, shuningdek qo'shimcha davolash usullari kiradi.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+  {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

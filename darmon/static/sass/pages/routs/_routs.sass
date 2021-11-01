@@ -1,0 +1,56 @@
+.routs
+  padding: 60px 0 150px
+  &-intro
+    background: url(../../img/intro/routs-bg.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center center
+  &-container
+    display: flex
+    flex-direction: column
+    justify-content: space-evenly
+    width: 100%
+    max-width: 1170px
+    margin: 0 auto
+    height: 411px
+    color: #FFF
+  &-title
+    font-weight: 700
+    margin-bottom: 10px
+  &-btn
+    a
+      display: inline-block
+      color: #FFF
+      font-weight: 700
+      padding: 15px 70px
+      border: 1px solid #FFF
+  &-grid
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 20px
+  &-card
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border: 2px solid #16A3DF
+    width: 200px
+    height: 200px
+    cursor: pointer
+    &-title
+      font-weight: 700
+      margin-top: 20px
+      color: #16A3DF
+    &:hover
+      background-color: #DAFEFE
+      border-color: #DAFEFE
+      animation: uNd 1.3s infinite ease-in-out
+
+@keyframes uNd
+  0%
+    transform: translateY(0px)
+  50%
+    transform: translateY(-10px)
+  100%
+    transform: translateY(0px)

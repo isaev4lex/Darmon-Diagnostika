@@ -1,0 +1,37 @@
+{% if lang == 'ru' %}
+  <div class="modal">
+    <div class="modal-overlay">
+      <div class="modal-window">
+        <form action="" class="modal-form">{% csrf_token %}
+          <input name="name" type="text" placeholder="Имя" />
+          <input name="surname" type="text" placeholder="Фамилия" />
+          <input name="phone" type="tel" placeholder="Номер телефона" />
+          <div class="modal-window-btns">
+            <button class="modal-window-cancel" type="reset">Отмена</button>
+            <button class="modal-window-accept" type="submit">
+              Оставить заявку
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% elif lang == 'uz' %}
+  <div class="modal">
+    <div class="modal-overlay">
+      <div class="modal-window">
+        <form action="" class="modal-form">{% csrf_token %}
+          <input name="name" type="text" placeholder="Ism" />
+          <input name="surname" type="text" placeholder="Familiya" />
+          <input name="phone" type="tel" placeholder="Telefon raqami" />
+          <div class="modal-window-btns">
+            <button class="modal-window-cancel" type="reset">Bekor qilish</button>
+            <button class="modal-window-accept" type="submit">
+              Murojaat qilish
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - УЗИ</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+      <div class="uzi-intro">
+        <div class="intro-overlay">
+          {% include 'header_ru.html' %}
+          <div class="laboratory-container">
+            <div class="laboratory-title">УЗИ</div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="others">
+          <div class="container-lg">
+            <div class="others-inner">
+              <div class="others-txt">
+                <div class="others-title">
+                  Диагностический центр Darmon Diagnostika может предложить
+                  следующие виды ультразвуковых исследований:
+                </div>
+                <div class="others-list">
+                  {% for uzi_item in uzi_items %}
+                    <div class="others-item">
+                      <a href="{{ uzi_item.get_url_ru }}" class="others-link">{{ forloop.counter }}. {{ uzi_item.title_ru }}</a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="others-img">
+                <img src="{% static '/img/uzi-card.webp' %}" alt="Картинка" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callback">
+          <div class="container-xsm">
+            <form action="/" class="callback-form">
+              <input type="text" placeholder="Имя" />
+              <input type="text" placeholder="Фамилия" />
+              <input type="tel" placeholder="Номер телефона" />
+              <button>Оставить заявку</button>
+            </form>
+          </div>
+        </div>
+      </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+      <div class="uzi-intro">
+        <div class="intro-overlay">
+          {% include 'header_uz.html' %}
+          <div class="laboratory-container">
+            <div class="laboratory-title">Ultratovush tekshiruv</div>
+            <div class="intro-btn">
+              <a href="#"> Qo'ng'iroq qilish </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="others">
+          <div class="container-lg">
+            <div class="others-inner">
+              <div class="others-txt">
+                <div class="others-title">
+                  Darmon Diagnostika diagnostika markazi ultratovush tekshiruvining quyidagi turlarini taklif qilishi mumkin:
+                </div>
+                <div class="others-list">
+                  {% for uzi_item in uzi_items %}
+                    <div class="others-item">
+                      <a href="{{ uzi_item.get_url_uz }}" class="others-link">{{ forloop.counter }}. {{ uzi_item.title_uz }}</a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="others-img">
+                <img src="{% static '/img/uzi-card.webp' %}" alt="Картинка" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callback">
+          <div class="container-xsm">
+            <form action="/" class="callback-form">
+              <input type="text" placeholder="Имя" />
+              <input type="text" placeholder="Фамилия" />
+              <input type="tel" placeholder="Номер телефона" />
+              <button>Оставить заявку</button>
+            </form>
+          </div>
+        </div>
+      </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+  {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

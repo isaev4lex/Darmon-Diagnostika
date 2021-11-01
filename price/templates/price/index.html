@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Цены</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+    <div class="price-intro">
+      <div class="intro-overlay">
+        {% include 'header_ru.html' %}
+        <div class="price-container">
+          <div class="price-title">Цены</div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+        <div class="table">
+          <div class="container-lg">
+            <div class="table-inner">
+              {% for category in price_categories %}
+                <div class="table-item">
+                  <div class="table-title">
+                    <div>{{ category.title_ru }}</div>
+                    <svg
+                      width="24"
+                      height="14"
+                      viewBox="0 0 24 14"
+                      fill="#15A2DE"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="table-icon"
+                    >
+                      <path
+                        d="M24 2.98893L12 13.4621L0 2.98893L2.22917 0.539062L12 9.05237L21.7708 0.539062L24 2.98893Z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="table-desc">
+                    {% for subcategory in price_subcategories %}
+                      {% if subcategory.category == category %}
+                        <div class="table-desc-item">
+                          <div class="table-desc-title">
+                            {{ subcategory.title_ru }}
+                          </div>
+                          <div class="table-desc-price">{{ subcategory.price }}</div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+    <div class="price-intro">
+      <div class="intro-overlay">
+        {% include 'header_uz.html' %}
+        <div class="price-container">
+          <div class="price-title">Narxlar</div>
+            <div class="intro-btn">
+              <a href="#"> Qo'ng'iroq qilish </a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+        <div class="table">
+          <div class="container-lg">
+            <div class="table-inner">
+              {% for category in price_categories %}
+                <div class="table-item">
+                  <div class="table-title">
+                    <div>{{ category.title_uz }}</div>
+                    <svg
+                      width="24"
+                      height="14"
+                      viewBox="0 0 24 14"
+                      fill="#15A2DE"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="table-icon"
+                    >
+                      <path
+                        d="M24 2.98893L12 13.4621L0 2.98893L2.22917 0.539062L12 9.05237L21.7708 0.539062L24 2.98893Z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="table-desc">
+                    {% for subcategory in price_subcategories %}
+                      {% if subcategory.category == category %}
+                        <div class="table-desc-item">
+                          <div class="table-desc-title">
+                            {{ subcategory.title_uz }}
+                          </div>
+                          <div class="table-desc-price">{{ subcategory.price }}</div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+  {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

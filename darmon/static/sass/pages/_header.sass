@@ -1,0 +1,53 @@
+.header
+  &-inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px 0
+  &-nav
+    display: flex
+    justify-content: space-between
+    width: 100%
+    max-width: 650px
+    &-link
+      color: #FFF
+  &-contacts
+    &-number
+      display: flex
+      align-items: center
+      color: #FFF
+      margin-bottom: 10px
+      img
+        display: block
+        margin-right: 10px
+    &-time
+      display: flex
+      align-items: center
+      color: #FFF
+      img
+        display: block
+        margin-right: 10px
+  &-lang
+    position: relative
+    background-color: #fff
+    a
+      padding: 3px 5px
+      display: flex
+      align-items: center
+      color: #15A2DE
+      font-weight: 500
+      img
+        margin-left: 5px
+        transition: transform .3s ease-in-out
+    &-submenu
+      position: absolute
+      background-color: #fff
+      left: 0
+      right: 0
+      height: 0
+      overflow: hidden
+    &:hover
+      img
+        transform: rotate(180deg)
+      .header-lang-submenu
+        height: auto

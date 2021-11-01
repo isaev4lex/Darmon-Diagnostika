@@ -1,0 +1,448 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Главная</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+    <div class="intro">
+      <div class="intro-overlay">
+        {% include 'header_ru.html' %}
+        <div class="intro-container">
+          <div class="intro-info">
+            <div class="intro-title">Darmon Diagnostika</div>
+            <div class="intro-txt">
+              В медицинском центре «DARMON DIAGNOSTIKA» вы можете получить
+              консультацию врачей. Консультативный прием ведут опытные,
+              квалифицированные врачи имеющие большой опыт работы.
+            </div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+          </div>
+          <div class="intro-img">
+            <img src="{% static '/img/persons.webp' %}" alt="Darmon Diagnostics" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <main>
+      <div class="type">
+        <div class="container-md">
+          <div class="type-grid">
+            <div class="type-info">
+              <div class="type-title">Наши виды диагностик</div>
+              <div class="type-desc">
+                Идейные соображения высшего порядка, а также рамки и место
+                обучения кадров требуют от нас анализа новых предложений.
+              </div>
+            </div>
+
+            <a href="{% url 'laboratory_ru' %}">
+              <div class="type-card">
+                <img
+                  src="{% static '/img/diagnostic-icons/labaratory.svg' %}"
+                  alt="Лаборатория"
+                  class="type-card-icon"
+                />
+                <div class="type-card-title">Лаборатория</div>
+              </div>
+            </a>
+            <a href="{% url 'uzi_ru' %}">
+              <div class="type-card">
+                <img
+                  src="{% static '/img/diagnostic-icons/uzi.svg' %}"
+                  alt="УЗИ"
+                  class="type-card-icon"
+                />
+                <div class="type-card-title">УЗИ</div>
+              </div>
+            </a>
+            <a href="{% url 'xray_ru' %}">
+              <div class="type-card">
+                <img
+                  src="{% static '/img/diagnostic-icons/xray.svg' %}"
+                  alt="Рентген - кабинет"
+                  class="type-card-icon"
+                />
+                <div class="type-card-title">Рентген - кабинет</div>
+              </div>
+            </a>
+            <a href="{% url 'gynecology_ru' %}">
+              <div class="type-card">
+                <img
+                  src="{% static '/img/diagnostic-icons/ginecology.svg' %}"
+                  alt="Гинекология"
+                  class="type-card-icon"
+                />
+                <div class="type-card-title">Гинекология</div>
+              </div>
+            </a>
+            <a href="{% url 'cardiology_ru' %}">
+              <div class="type-card">
+                <img
+                  src="{% static '/img/diagnostic-icons/cardio.svg' %}"
+                  alt="Кардиология"
+                  class="type-card-icon"
+                />
+                <div class="type-card-title">Кардиология</div>
+              </div>
+            </a>
+
+            <div class="type-btn">
+              <a href="{% url 'routes_ru' %}">
+                <img src="{% static '/img/right-arrow.svg' %}" alt="Посмотреть всё" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="container-md">
+          <div class="info-inner">
+            <div class="info-txt">
+              <div class="info-title">
+                Многопрофильная клиника Darmon Diagnostika
+              </div>
+              <div class="info-desc">
+                <p>
+                  Darmon Diagnostika — это многопрофильная семейная клиника
+                  мужского и женского здоровья.
+                </p>
+                <p>
+                  Во всех клиниках Darmon Diagnostika клиенты получают
+                  квалифицированную помощь по всем основным направлениям
+                  современной медицины.
+                </p>
+                <p>
+                  Мы проводим диагностику и лечение различных видов
+                  заболеваний и нарушений мочеполовой и иммунной систем,
+                  кожных и аллергических заболеваний, органов кровообращения и
+                  пищеварения, терапию, гомеопатию, косметологические
+                  процедуры и другие медицинские услуги.
+                </p>
+                <p>
+                  Высококлассные лечебно-диагностические центры, оснащённые
+                  современными техническими средствами, позволяют проводить
+                  максимально точные исследования организма и выявлять текущие
+                  заболевания. На основе полученных данных опытные врачи
+                  разрабатывают необходимый курс лечения, который вернёт
+                  пациента к полноценной здоровой жизни. Специалисты Darmon
+                  Diagnostika проведут консультацию по всем интересующим Вас
+                  вопросам. Наличие полиса и прописки не требуется.
+                </p>
+                <p>
+                  В Darmon Diagnostika приходят семьями, а врачей рекомендуют
+                  друзьям и близким. Нам доверяют, а это главный показатель
+                  качества предоставляемых нами услуг.
+                </p>
+              </div>
+            </div>
+            <div class="info-img">
+              <img src="{% static '/img/pic.png' %}" alt="Персонал" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="experts">
+        <div class="container-lg">
+          <div class="experts-title">Специалисты Darmon Diagnostika</div>
+          <div class="experts-inner">
+            <div class="experts-card">
+              <div class="experts-name">Авулова Феруза Курбановна</div>
+              <div class="experts-profession">педиатр, лаборант</div>
+              <div class="experts-img">
+                <img src="{% static '/img/experts/1.webp' %}" alt="Специалисты" />
+              </div>
+            </div>
+
+            <div class="experts-card">
+              <div class="experts-name">Болтабаев Исмоил Шукруллаевич</div>
+              <div class="experts-profession">невролог</div>
+              <div class="experts-img">
+                <img src="{% static '/img/experts/2.webp' %}" alt="Специалисты" />
+              </div>
+            </div>
+
+            <div class="experts-card">
+              <div class="experts-name">Очилов Ахрор Мухаммадиевич</div>
+              <div class="experts-profession">врач-уролог</div>
+              <div class="experts-img">
+                <img src="{% static '/img/experts/3.webp' %}" alt="Специалисты" />
+              </div>
+            </div>
+
+            <div class="experts-card">
+              <div class="experts-name">Умаров Джумадулла Ахмедович</div>
+              <div class="experts-profession">эндокринолог</div>
+              <div class="experts-img">
+                <img src="{% static '/img/experts/4.webp' %}" alt="Специали1сты" />
+              </div>
+            </div>
+          </div>
+          <div class="experts-btn">
+            <a href="{% url 'doctors_ru' %}">
+              Посмотреть всё
+              <img src="{% static '/img/right-arrow-blue.svg' %}" alt="Стрелка" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="services">
+        <div class="container-md">
+          <div class="services-title">Наши услуги</div>
+          <div class="services-inner">
+            <div class="services-item">
+              <div class="services-name">
+                Общий анализ крови ( 26 показателей )
+              </div>
+              <div class="services-price">25 000 сум</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">
+                Скорость оседания эритроцитов (СОЭ)
+              </div>
+              <div class="services-price">25 000 сум</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">
+                Группа крови и резус-фактор (Rh)
+              </div>
+              <div class="services-price">25 000 сум</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">
+                ВСК (время свертывания по Сухареву)
+              </div>
+              <div class="services-price">7 000 сум</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">Гемоглобин</div>
+              <div class="services-price">10 000 сум</div>
+            </div>
+          </div>
+          <div class="services-btn">
+            <a href="{% url 'price_ru' %}">Посмотреть всё
+              <img src="{% static '/img/right-arrow-white.svg' %}" alt="Стрелка"
+              /></a>
+          </div>
+        </div>
+      </div>
+    </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+    <div class="intro">
+      <div class="intro-overlay">
+        {% include 'header_uz.html' %}
+        <div class="intro-container">
+          <div class="intro-info">
+            <div class="intro-title">Darmon Diagnostika</div>
+            <div class="intro-txt">
+              «Darmon Diagnostika» tibbiy markazida siz katta tajribaga ega shifokorlarlarning konsultatsiyasini olishingiz mumkin
+            </div>
+            <div class="intro-btn">
+              <a href="#"> Qoʻngʻiroq qilish </a>
+            </div>
+          </div>
+          <div class="intro-img">
+            <img src="{% static '/img/persons.webp' %}" alt="Darmon Diagnostics" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="type">
+        <div class="container-md">
+          <div class="type-grid">
+            <div class="type-info">
+              <div class="type-title">Bizning diagnostika turlari</div>
+              <div class="type-desc">
+                Yuqori darajadagi mafkuraviy mulohazalar, shuningdek, ko'lam va joy kadrlar tayyorlash bizdan yangi takliflarni tahlil qilishni talab qiladi.
+              </div>
+            </div>
+            <a href="{% url 'laboratory_uz' %}">
+              <div class="type-card">
+                <img
+                  src="{% static '/img/diagnostic-icons/labaratory.svg' %}"
+                  alt="Лаборатория"
+                  class="type-card-icon"
+                />
+                <div class="type-card-title">Laboratoriya</div>
+              </div>
+            </a>
+            <a href="{% url 'uzi_uz' %}">
+              <div class="type-card">
+                <img
+                  src="{% static '/img/diagnostic-icons/uzi.svg' %}"
+                  alt="УЗИ"
+                  class="type-card-icon"
+                />
+                <div class="type-card-title">Ultratovush tekshiruv</div>
+              </div>
+            </a>
+            <a href="{% url 'xray_uz' %}">
+              <div class="type-card">
+                <img
+                  src="{% static '/img/diagnostic-icons/xray.svg' %}"
+                  alt="Рентген - кабинет"
+                  class="type-card-icon"
+                />
+                <div class="type-card-title">Rentgen</div>
+              </div>
+            </a>
+            <a href="{% url 'gynecology_uz' %}">
+              <div class="type-card">
+                <img
+                  src="{% static '/img/diagnostic-icons/ginecology.svg' %}"
+                  alt="Гинекология"
+                  class="type-card-icon"
+                />
+                <div class="type-card-title">Ginekologiya</div>
+              </div>
+            </a>
+            <a href="{% url 'cardiology_uz' %}">
+              <div class="type-card">
+                <img
+                  src="{% static '/img/diagnostic-icons/cardio.svg' %}"
+                  alt="Кардиология"
+                  class="type-card-icon"
+                />
+                <div class="type-card-title">Kardiologiya</div>
+              </div>
+            </a>
+            <div class="type-btn">
+              <a href="{% url 'routes_uz' %}">
+                <img src="{% static '/img/right-arrow.svg' %}" alt="Посмотреть всё" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="container-md">
+          <div class="info-inner">
+            <div class="info-txt">
+              <div class="info-title">
+                Darmon Diagnostika - erkak va ayollar salomatligini saqlaydigan ko'p yo'nalishlarga ega oilaviy klinika.
+              </div>
+              <div class="info-desc">
+                <p>
+                  Barcha Darmon Diagnostika klinikalarida bemorlarga zamonaviy tibbiyotning barcha asosiy yo'nalishlari bo'yicha malakali yordam ko'rsatiladi.
+                </p>
+                <p>
+                  Biz tanosil azolari va immun tizimi kasalliklari, ter va allergik kasalliklari, qon aylanish va ovqat hazm qilish organlari kasalliklari va boshqa turli xil kasalliklarni diagnostika qilamiz va davolaymiz. Bundan tashqari, biz terapiya, kosmetik protseduralar va boshqa tibbiy xizmatlarni amalga oshiramiz.
+                </p>
+                <p>
+                  Zamonaviy texnik vositalar bilan jihozlangan yuqori sifatli davolash-diagnostika markazimiz tanani eng aniq tekshiruvdan o'tkazib, kasalliklarni aniqlash imkonini beradi. Mavjud bo’lgan ma'lumotlarga asoslanib, tajribali shifokorlar bemorni to'liq sog'lom hayotga qaytaradigan kerakli davolash kursini ishlab chiqadilar. Darmon Diagnostika mutaxassislari sizning barcha savollaringiz bo'yicha maslahat berishadi. Propiskaning mavjudligi va ro'yxatdan o'tish shart emas.
+                </p>
+                <p>
+                 Darmon Diagnostikaga ko’plab oilalar tashrif buyurishadi, shifokorlarimizni esa ular do’stlariga va tanishlariga tavsiya qilishadi. Bemorlar o’z sog’lig’ini bizga ishonishadi va bu esa biz ko'rsatayotgan xizmatlar sifatining eng asosiy ko'rsatkichidir.
+                </p>
+              </div>
+            </div>
+            <div class="info-img">
+              <img src="{% static '/img/pic.webp' %}" alt="Персонал" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="experts">
+        <div class="container-lg">
+          <div class="experts-title">Darmon o'rasidagi mutaxassislar</div>
+          <div class="experts-inner">
+            <div class="experts-card">
+              <div class="experts-name">Avulova Feruza Qurbonovna</div>
+              <div class="experts-profession">pediatr, laborant</div>
+              <div class="experts-img">
+                <img src="{% static '/img/experts/1.webp' %}" alt="Специалисты" />
+              </div>
+            </div>
+
+            <div class="experts-card">
+              <div class="experts-name">Boltaboev Ismoil Shukrullaevich</div>
+              <div class="experts-profession">nevrolog</div>
+              <div class="experts-img">
+                <img src="{% static '/img/experts/2.webp' %}" alt="Специалисты" />
+              </div>
+            </div>
+
+            <div class="experts-card">
+              <div class="experts-name">Ochilov Axror Muxammadievich</div>
+              <div class="experts-profession">urolog</div>
+              <div class="experts-img">
+                <img src="{% static '/img/experts/3.webp' %}" alt="Специалисты" />
+              </div>
+            </div>
+
+            <div class="experts-card">
+              <div class="experts-name">Umarov Jumadulla Ahmedovich</div>
+              <div class="experts-profession">endokrinolog</div>
+              <div class="experts-img">
+                <img src="{% static '/img/experts/4.webp' %}" alt="Специали1сты" />
+              </div>
+            </div>
+          </div>
+          <div class="experts-btn">
+            <a href="{% url 'doctors_uz' %}">
+              Hammasini ko'rish
+              <img src="{% static '/img/right-arrow-blue.svg' %}" alt="Стрелка" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="services">
+        <div class="container-md">
+          <div class="services-title">Bizning xizmatimiz</div>
+          <div class="services-inner">
+            <div class="services-item">
+              <div class="services-name">
+                Qon analizi
+              </div>
+              <div class="services-price">25 000 som</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">
+                Eritrotsitlarning singish tezligi
+              </div>
+              <div class="services-price">25 000 som</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">
+                Qon guruhi va rezus-faktor
+              </div>
+              <div class="services-price">25 000 som</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">
+                Qon ivishi
+              </div>
+              <div class="services-price">7 000 som</div>
+            </div>
+            <div class="services-item">
+              <div class="services-name">Gemoglobin</div>
+              <div class="services-price">10 000 som</div>
+            </div>
+          </div>
+          <div class="services-btn">
+            <a href="{% url 'price_uz' %}">Hamma narsaga qarang
+              <img src="{% static '/img/right-arrow-white.svg' %}" alt="Стрелка"
+              /></a>
+          </div>
+        </div>
+      </div>
+    </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+  {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

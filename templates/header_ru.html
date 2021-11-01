@@ -1,0 +1,109 @@
+{% load static %}
+<header class="header">
+  <div class="container-lg">
+    <div class="header-inner">
+      <div class="header-logo">
+        <a href="{% url 'home_ru' %}">
+          <img src="{% static '/img/logo.png' %}" alt="Логотип" />
+        </a>
+      </div>
+      <ul class="header-nav">
+        <li class="header-nav-list">
+          <a href="{% url 'home_ru' %}" class="header-nav-link">Главная</a>
+        </li>
+        <li class="header-nav-list">
+          <a href="{% url 'routes_ru' %}" class="header-nav-link">Направления</a>
+        </li>
+        <li class="header-nav-list">
+          <a href="{% url 'price_ru' %}" class="header-nav-link">Цены</a>
+        </li>
+        <li class="header-nav-list">
+          <a href="{% url 'doctors_ru' %}" class="header-nav-link">Специалисты</a>
+        </li>
+        <li class="header-nav-list">
+          <a href="{% url 'contacts_ru' %}" class="header-nav-link">
+            Контакты</a>
+        </li>
+        <li class="header-nav-list">
+          <a href="{% url 'about_us_ru' %}" class="header-nav-link">О клинике</a>
+        </li>
+      </ul>
+
+      <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="{% url 'home_ru' %}">Главная</a></li>
+          <li>
+            <a class="menu__item" href="{% url 'routes_ru' %}">Направления</a>
+          </li>
+          <li><a class="menu__item" href="{% url 'price_ru' %}">Цены</a></li>
+          <li>
+            <a class="menu__item" href="{% url 'doctors_ru' %}">Специалисты</a>
+          </li>
+          <li>
+            <a class="menu__item" href="{% url 'contacts_ru' %}">Контакты</a>
+          </li>
+          <li>
+            <a class="menu__item" href="{% url 'about_us_ru' %}">О клинике</a>
+          </li>
+          <li class="hamburger-contacts">
+            <a
+              href="tel:+998712174700"
+              class="hamburger-contacts-number"
+            >
+              <img src="{% static '/img/header-icons/phone.svg' %}" alt="Телефон" />
+              {{ phones|first}}
+            </a>
+            <div class="hamburger-contacts-time">
+              <img src="{% static '/img/header-icons/clock.svg' %}" alt="Время" />
+              Пн-Сб с 8.00-17.00
+            </div>
+          </li>
+          <li class="hamburger-lang">
+            {% if slug %}
+              <a href="{% url current_page_ru slug %}" class="hamburger-lang-active"> RU </a>
+              <a href="{% url current_page_uz slug %}">UZ</a>
+            {% else %}
+              <a href="{% url current_page_ru %}" class="hamburger-lang-active"> RU </a>
+              <a href="{% url current_page_uz %}">UZ</a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+
+      <div class="header-lang">
+        {% if slug %}
+          <a href="{% url current_page_ru slug %}">
+            RU
+            <img src="{% static '/img/arrowDown.svg' %}" alt="Стрелка вниз" />
+          </a>
+          <div class="header-lang-submenu">
+            <a href="{% url current_page_uz slug %}">UZ</a>
+          </div>
+        {% else %}
+          <a href="{% url current_page_ru %}">
+            RU
+            <img src="{% static '/img/arrowDown.svg' %}" alt="Стрелка вниз" />
+          </a>
+          <div class="header-lang-submenu">
+            <a href="{% url current_page_uz %}">UZ</a>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="header-contacts">
+        <a href="tel:+998712174700" class="header-contacts-number">
+          <img src="{% static '/img/header-icons/phone.svg' %}" alt="Телефон" />
+          {{ phones|first}}
+        </a>
+        <div class="header-contacts-time">
+          <img src="{% static '/img/header-icons/clock.svg' %}" alt="Время" />
+          Пн-Сб с 8.00 до 17.00
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

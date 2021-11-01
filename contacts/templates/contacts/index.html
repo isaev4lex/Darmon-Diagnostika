@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Контакты</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+    <div class="contacts-intro">
+      <div class="intro-overlay">
+        {% include 'header_ru.html' %}
+        <div class="contacts-container">
+          <div class="contacts-title">Контакты</div>
+        </div>
+      </div>
+    </div>
+      <main>
+        <div class="contacts">
+          <div class="container-md">
+            <div class="contacts-inner">
+              <div class="contacts-number">
+                <div class="contacts-number-title">Телефоны</div>
+                {% for phone in phones %}
+                  <a href="tel:{{phone}}">{{ phone }}</a>
+                {% endfor %}
+              </div>
+              <div class="contacts-email">
+                <div class="contacts-email-title">Почта</div>
+                {% for email in emails %}
+                  <a href="mailto:{{ email }}">
+                    {{ email }}
+                  </a>
+                {% endfor %}
+              </div>
+              <div class="contacts-address">
+                <div class="contacts-address-title">Адрес</div>
+                <p>
+                  {% for address in addresses %}
+                    {{ address }}
+                  {% endfor %}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="container-md">
+            <div class="info-inner">
+              <div class="info-txt">
+                <div class="info-title">
+                  Многопрофильная клиника Darmon Diagnostika
+                </div>
+                <div class="info-desc">
+                  <p>
+                    Darmon Diagnostika — это многопрофильная семейная клиника
+                    мужского и женского здоровья.
+                  </p>
+                  <p>
+                    Во всех клиниках Darmon Diagnostika клиенты получают
+                    квалифицированную помощь по всем основным направлениям
+                    современной медицины.
+                  </p>
+                  <p>
+                    Мы проводим диагностику и лечение различных видов
+                    заболеваний и нарушений мочеполовой и иммунной систем,
+                    кожных и аллергических заболеваний, органов кровообращения и
+                    пищеварения, терапию, гомеопатию, косметологические
+                    процедуры и другие медицинские услуги.
+                  </p>
+                  <p>
+                    Высококлассные лечебно-диагностические центры, оснащённые
+                    современными техническими средствами, позволяют проводить
+                    максимально точные исследования организма и выявлять текущие
+                    заболевания. На основе полученных данных опытные врачи
+                    разрабатывают необходимый курс лечения, который вернёт
+                    пациента к полноценной здоровой жизни. Специалисты Darmon
+                    Diagnostika проведут консультацию по всем интересующим Вас
+                    вопросам. Наличие полиса и прописки не требуется.
+                  </p>
+                  <p>
+                    В Darmon Diagnostika приходят семьями, а врачей рекомендуют
+                    друзьям и близким. Нам доверяют, а это главный показатель
+                    качества предоставляемых нами услуг.
+                  </p>
+                </div>
+              </div>
+              <div class="info-img">
+                <img src="{% static '/img/pic.png' %}" alt="Персонал" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+    <div class="contacts-intro">
+      <div class="intro-overlay">
+        {% include 'header_uz.html' %}
+        <div class="contacts-container">
+          <div class="contacts-title">Aloqa kontaktlari</div>
+        </div>
+      </div>
+    </div>
+      <main>
+        <div class="contacts">
+          <div class="container-md">
+            <div class="contacts-inner">
+              <div class="contacts-number">
+                <div class="contacts-number-title">Raqamlar</div>
+                {% for phone in phones %}
+                  <a href="tel:{{phone}}">{{ phone }}</a>
+                {% endfor %}
+              </div>
+              <div class="contacts-email">
+                <div class="contacts-email-title">Pochta</div>
+                {% for email in emails %}
+                  <a href="mailto:{{ email }}">
+                    {{ email }}
+                  </a>
+                {% endfor %}
+              </div>
+              <div class="contacts-address">
+                <div class="contacts-address-title">Manzil</div>
+                <p>
+                  {% for address in addresses %}
+                    {{ address.address_uz }}
+                  {% endfor %}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="container-md">
+            <div class="info-inner">
+              <div class="info-txt">
+                <div class="info-title">
+                  Darmon Diagnostika - erkak va ayollar salomatligini saqlaydigan ko'p yo'nalishlarga ega oilaviy klinika.
+                </div>
+                <div class="info-desc">
+                  <p>
+                    Barcha Darmon Diagnostika klinikalarida bemorlarga zamonaviy tibbiyotning barcha asosiy yo'nalishlari bo'yicha malakali yordam ko'rsatiladi.
+                  </p>
+                  <p>
+                    Biz tanosil azolari va immun tizimi kasalliklari, ter va allergik kasalliklari, qon aylanish va ovqat hazm qilish organlari kasalliklari va boshqa turli xil kasalliklarni diagnostika qilamiz va davolaymiz. Bundan tashqari, biz terapiya, kosmetik protseduralar va boshqa tibbiy xizmatlarni amalga oshiramiz.
+                  </p>
+                  <p>
+                    Zamonaviy texnik vositalar bilan jihozlangan yuqori sifatli davolash-diagnostika markazimiz tanani eng aniq tekshiruvdan o'tkazib, kasalliklarni aniqlash imkonini beradi. Mavjud bo’lgan ma'lumotlarga asoslanib, tajribali shifokorlar bemorni to'liq sog'lom hayotga qaytaradigan kerakli davolash kursini ishlab chiqadilar. Darmon Diagnostika mutaxassislari sizning barcha savollaringiz bo'yicha maslahat berishadi. Propiskaning mavjudligi va ro'yxatdan o'tish shart emas.
+                  </p>
+                  <p>
+                   Darmon Diagnostikaga ko’plab oilalar tashrif buyurishadi, shifokorlarimizni esa ular do’stlariga va tanishlariga tavsiya qilishadi. Bemorlar o’z sog’lig’ini bizga ishonishadi va bu esa biz ko'rsatayotgan xizmatlar sifatining eng asosiy ko'rsatkichidir.
+                  </p>
+                </div>
+              </div>
+              <div class="info-img">
+                <img src="{% static '/img/pic.png' %}" alt="Персонал" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

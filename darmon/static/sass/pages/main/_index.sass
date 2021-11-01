@@ -1,0 +1,44 @@
+.type
+  padding: 150px 0
+  color: #15A2DE
+  &-info
+    width: 100%
+    max-width: 522px
+  &-title
+    font-weight: 700
+  &-desc
+    line-height: 1.5
+  &-grid
+    display: grid
+    grid-template-columns: repeat(4, 1fr )
+    gap: 20px
+  &-info
+    display: flex
+    flex-direction: column
+    justify-content: center
+    grid-column-start: 1
+    grid-column-end: 3
+  &-card
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border: 2px solid #16A3DF
+    width: 251px
+    height: 251px
+    transition: all .3s ease-in-out
+    cursor: pointer
+    &-title
+      font-weight: 700
+      margin-top: 20px
+    &:hover
+      background-color: #DAFEFE
+      border-color: #DAFEFE
+      transform: translateY(-10px)
+  &-btn
+    width: 251px
+    height: 251px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center

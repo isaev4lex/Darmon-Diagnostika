@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% for favicon in favicons %}
+        <meta property="og:image" content="{{ favicon.favicon.url }}">
+        <link rel="icon" href="{{ favicon.favicon.url }}" type="image/x-icon">
+    {% endfor %}
+    {% for html_tag in head_tags %}
+        {% autoescape off %} {{ html_tag.tag }}{% endautoescape %}
+    {% endfor %}
+    {% block head %}
+
+    {% endblock %}
+  </head>
+  <body>
+    <div class="page">
+      {% block body %}
+      {% endblock %}
+
+    </div>
+  </body>
+</html>

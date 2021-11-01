@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Стационар</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+      <div class="statsionar-intro">
+        <div class="intro-overlay">
+          {% include 'header_ru.html' %}
+          <div class="page-container">
+            <div class="page-title">Стационар</div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="desc">
+          <div class="container-lg">
+            <div class="desc-inner">
+              <div class="desc-img">
+                {% for item in hospital_items %}
+                  <img src="{{ item.banner.url }}" alt="" />
+                {% endfor %}
+              </div>
+              <div class="desc-desc">
+                <p>
+                  {% autoescape off %}
+                    {% for item in hospital_items %}
+                      {{ item.description_ru }}
+                    {% endfor %}
+                  {% endautoescape %}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% include 'feedback.html' %}
+      </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+      <div class="statsionar-intro">
+        <div class="intro-overlay">
+          {% include 'header_uz.html' %}
+          <div class="page-container">
+            <div class="page-title">Davolash statsionari</div>
+            <div class="intro-btn">
+              <a href="#"> Qo'ng'iroq qilish </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="desc">
+          <div class="container-lg">
+            <div class="desc-inner">
+              <div class="desc-img">
+                {% for item in hospital_items %}
+                  <img src="{{ item.banner.url }}" alt="" />
+                {% endfor %}
+              </div>
+              <div class="desc-desc">
+                <p>
+                  {% autoescape off %}
+                    {% for item in hospital_items %}
+                      {{ item.description_uz }}
+                    {% endfor %}
+                  {% endautoescape %}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% include 'feedback.html' %}
+      </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+  {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

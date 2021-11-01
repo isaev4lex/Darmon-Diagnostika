@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static '/css/style.min.css' %}" />
+  <title>Darmon Diagnostika - Терапевт</title>
+{% endblock %}
+{% block body %}
+  {% if lang == 'ru' %}
+      <div class="terapevt-intro">
+        <div class="intro-overlay">
+          {% include 'header_ru.html' %}
+          <div class="laboratory-container">
+            <div class="laboratory-title">Терапевт</div>
+            <div class="intro-btn">
+              <a href="#"> Позвонить </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="others">
+          <div class="container-lg">
+            <div class="others-inner">
+              <div class="others-txt">
+                <div class="others-title">
+                  Терапевт:
+                </div>
+                <div class="others-list">
+                  {% for therapist_item in therapist_items %}
+                    <div class="others-item">
+                      <a href="{{ therapist_item.get_url_ru }}" class="others-link">{{ forloop.counter }}. {{ therapist_item.title_ru }}</a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="others-img">
+                <img src="{% static '/img/stats-card.webp' %}" alt="Картинка" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% include 'feedback.html' %}
+      </main>
+    {% include 'footer_ru.html' %}
+  {% elif lang == 'uz' %}
+      <div class="terapevt-intro">
+        <div class="intro-overlay">
+          {% include 'header_uz.html' %}
+          <div class="laboratory-container">
+            <div class="laboratory-title">Terapevt</div>
+            <div class="intro-btn">
+              <a href="#"> Qo'ng'iroq qilish </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <div class="others">
+          <div class="container-lg">
+            <div class="others-inner">
+              <div class="others-txt">
+                <div class="others-title">
+                  Terapevt:
+                </div>
+                <div class="others-list">
+                  {% for therapist_item in therapist_items %}
+                    <div class="others-item">
+                      <a href="{{ therapist_item.get_url_uz }}" class="others-link">{{ forloop.counter }}. {{ therapist_item.title_uz }}</a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="others-img">
+                <img src="{% static '/img/stats-card.webp' %}" alt="Картинка" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% include 'feedback.html' %}
+      </main>
+    {% include 'footer_uz.html' %}
+  {% endif %}
+  {% include 'feedback_modal.html' %}
+  <script src="{% static '/js/index.js' %}" defer></script>
+{% endblock %}

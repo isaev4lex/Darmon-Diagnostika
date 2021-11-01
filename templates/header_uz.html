@@ -1,0 +1,108 @@
+{% load static %}
+<header class="header">
+  <div class="container-lg">
+    <div class="header-inner">
+      <div class="header-logo">
+        <a href="{% url 'home_uz' %}">
+          <img src="{% static '/img/logo.png' %}" alt="Логотип" />
+        </a>
+      </div>
+      <ul class="header-nav">
+        <li class="header-nav-list">
+          <a href="{% url 'home_uz' %}" class="header-nav-link">Bosh sahifa</a>
+        </li>
+        <li class="header-nav-list">
+          <a href="{% url 'routes_uz' %}" class="header-nav-link">Yoʻnalishlar</a>
+        </li>
+        <li class="header-nav-list">
+          <a href="{% url 'price_uz' %}" class="header-nav-link">Narxlar</a>
+        </li>
+        <li class="header-nav-list">
+          <a href="{% url 'doctors_uz' %}" class="header-nav-link">Mutaxassislar</a>
+        </li>
+        <li class="header-nav-list">
+          <a href="{% url 'contacts_uz' %}" class="header-nav-link">
+            Aloqa kontaktlari</a>
+        </li>
+        <li class="header-nav-list">
+          <a href="{% url 'about_us_uz' %}" class="header-nav-link">Klinikamiz haqida</a>
+        </li>
+      </ul>
+      <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="{% url 'home_uz' %}">Bosh sahifa</a>
+          <li>
+            <a class="menu__item" href="{% url 'routes_uz' %}">Yoʻnalishlar</a>
+          </li>
+          <li><a class="menu__item" href="{% url 'price_uz' %}">Narxlar</a>
+          <li>
+            <a class="menu__item" href="{% url 'doctors_uz' %}">Mutaxassislar</a>
+          </li>
+          <li>
+            <a class="menu__item" href="{% url 'contacts_uz' %}">Aloqa kontaktlari</a>
+          </li>
+          <li>
+            <a class="menu__item" href="{% url 'about_us_uz' %}">Klinikamiz haqida</a>
+          </li>
+          <li class="hamburger-contacts">
+            <a
+              href="tel:+998712174700"
+              class="hamburger-contacts-number"
+            >
+              <img src="{% static '/img/header-icons/phone.svg' %}" alt="Телефон" />
+              {{ phones|first}}
+            </a>
+            <div class="hamburger-contacts-time">
+              <img src="{% static '/img/header-icons/clock.svg' %}" alt="Время" />
+              Du-Sh 8.00 - 17.00
+            </div>
+          </li>
+          <li class="hamburger-lang">
+            {% if slug %}
+              <a href="{% url current_page_ru slug %}"> RU </a>
+              <a href="{% url current_page_uz slug %}" class="hamburger-lang-active">UZ</a>
+            {% else %}
+              <a href="{% url current_page_ru %}"> RU </a>
+              <a href="{% url current_page_uz %}" class="hamburger-lang-active">UZ</a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+
+      <div class="header-lang">
+        {% if slug %}
+          <a href="{% url current_page_uz slug %}">
+            UZ
+            <img src="{% static '/img/arrowDown.svg' %}" alt="Стрелка вниз" />
+          </a>
+          <div class="header-lang-submenu">
+            <a href="{% url current_page_ru slug %}">RU</a>
+          </div>
+        {% else %}
+          <a href="{% url current_page_uz %}">
+            UZ
+            <img src="{% static '/img/arrowDown.svg' %}" alt="Стрелка вниз" />
+          </a>
+          <div class="header-lang-submenu">
+            <a href="{% url current_page_ru %}">RU</a>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="header-contacts">
+        <a href="tel:+998712174700" class="header-contacts-number">
+          <img src="{% static '/img/header-icons/phone.svg' %}" alt="Телефон" />
+          {{ phones|first}}
+        </a>
+        <div class="header-contacts-time">
+          <img src="{% static '/img/header-icons/clock.svg' %}" alt="Время" />
+          Du-Sh 8.00 - 17.00
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
